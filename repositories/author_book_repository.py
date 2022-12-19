@@ -26,3 +26,16 @@ def select_all():
         ab= AuthorBook(author,book,row['id'])
         abs.append(ab)
     return abs
+
+
+def select(id):
+    ab = None
+    sql = "SELECT * FROM authorBooks WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+
+    if results is not None:
+        author = author_repository.select(results['author_id'])
+        book=book_repository.select(results['book_id'])
+        ab = AuthorBook(author,book, results['id'])
+    return ab

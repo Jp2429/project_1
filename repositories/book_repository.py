@@ -20,3 +20,13 @@ def select_all():
         book = Book(row['title'],row['description'],row['stock_quantity'],row['buying_cost'],row['selling_price'],row['genre'] , row['id'])
         books.append(book)
     return books
+
+def select(id):
+    book = None
+    sql = "SELECT * FROM books WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+
+    if results is not None:
+        book = Book(results['title'],results['description'],results['stock_quantity'],results['buying_cost'],results['selling_price'],results['genre'] , results['id'])
+    return book
