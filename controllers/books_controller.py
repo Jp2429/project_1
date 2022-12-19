@@ -36,8 +36,31 @@ def new_book():
 @books_blueprint.route("/books", methods=['POST'])
 def create_book():
     title = request.form['title']
-    author_id = request.form['author_id']
-    author = author_repository.select(author_id)
-    book = Book(title, author)
+    genre = request.form['genre']
+    description=request.form['description']
+    stock_quantity=request.form['stock_quantity']
+    buying_cost=request.form['buying_cost']
+    selling_price=request.form['selling_price']
+    book=Book(title,description,stock_quantity,buying_cost,selling_price,genre)
     book_repository.save(book)
+    return redirect('/books')
+
+# edit book
+@books_blueprint.route("/books/<id>/edit_book")
+def edit(id):
+    book = book_repository.select(id)
+    return render_template("/books/edit_book.html", book=book)
+
+
+# update book
+@books_blueprint.route("/books/<id>/edit_book", methods=['POST'])
+def update(id):
+    title = request.form['title']
+    genre = request.form['genre']
+    description=request.form['description']
+    stock_quantity=request.form['stock_quantity']
+    buying_cost=request.form['buying_cost']
+    selling_price=request.form['selling_price']
+    book = Book(title,description,stock_quantity,buying_cost,selling_price,genre,id)
+    book_repository.update(book)
     return redirect('/books')
