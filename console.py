@@ -36,5 +36,5 @@ ab_3_results=ab_repository.save(ab_3)
 
 select_all_books=book_repository.select_all()
 select_all_authors=author_repository.select_all()
-for row in select_all_authors:
-    print(row.__dict__)
+# for row in select_all_authors:
+#     print(row.__dict__)

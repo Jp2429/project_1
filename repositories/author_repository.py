@@ -20,3 +20,12 @@ def select_all():
         author = Author(row['first_name'],row['last_name'],row['age'], row['id'])
         authors.append(author)
     return authors
+
+def select(id):
+    author = None
+    sql = "SELECT * FROM authors WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+    if results is not None:
+        author = Author(results['first_name'],results['last_name'],results['age'], results['id'])
+    return author

@@ -14,3 +14,15 @@ def save(ab):
     id=query_results[0]['id']
     ab.id=id
     return ab
+
+def select_all():
+    abs=[]
+    sql="SELECT * FROM authorsBooks"
+    query_results=run_sql(sql)
+
+    for row in query_results:
+        author=author_repository.select(row['author_id'])
+        book=book_repository.select(row['book_id'])
+        ab= AuthorBook(author,book,row['id'])
+        abs.append(ab)
+    return abs
