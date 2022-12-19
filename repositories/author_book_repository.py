@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 
 from models.book import Book
 from models.author import Author
+from models.author_book import AuthorBook
 
 import repositories.author_repository as author_repository
 import repositories.book_repository as book_repository

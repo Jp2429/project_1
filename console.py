@@ -23,12 +23,11 @@ author_1_results=author_repository.save(author_1)
 author_2=Author("J.k","Rowling",57)
 author_2_results=author_repository.save(author_2)
 
-ab_1=AuthorBook(book_1,author_1)
+ab_1=AuthorBook(author_1,book_1)
 ab_1_results=ab_repository.save(ab_1)
 
-ab_2=AuthorBook(book_2,author_2)
+ab_2=AuthorBook(author_2,book_2)
 ab_2_results=ab_repository.save(ab_2)
 
-ab_3=AuthorBook(book_3,author_2)
+ab_3=AuthorBook(author_2,book_3)
 ab_3_results=ab_repository.save(ab_3)
-# 
