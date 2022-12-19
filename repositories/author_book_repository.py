@@ -30,7 +30,7 @@ def select_all():
 
 def select(id):
     ab = None
-    sql = "SELECT * FROM authorBooks WHERE id = %s"
+    sql = "SELECT * FROM authorsBooks WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)[0]
 
@@ -39,3 +39,5 @@ def select(id):
         book=book_repository.select(results['book_id'])
         ab = AuthorBook(author,book, results['id'])
     return ab
+
+

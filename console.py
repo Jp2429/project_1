@@ -47,3 +47,5 @@ select_book=book_repository.select(book_2.id)
 
 select_author=author_repository.select(author_2.id)
 # print(select_author.__dict__)
+select_ab=ab_repository.select(ab_2.id)
+print(select_ab.__dict__)
