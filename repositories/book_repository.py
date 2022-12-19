@@ -10,3 +10,13 @@ def save(book):
     id =query_results[0]['id']
     book.id=id
     return book
+
+def select_all():
+    books = []
+    sql = "SELECT * FROM books"
+    results = run_sql(sql)
+
+    for row in results:
+        book = Book(row['title'],row['description'],row['stock_quantity'],row['buying_cost'],row['selling_price'],row['genre'] , row['id'])
+        books.append(book)
+    return books
