@@ -13,6 +13,9 @@
                 {{book.genre}}<br>
                 {{book.description}}<br>
                 <a href="/books/{{book.id}}">See here for more information</a>
+                <form class="delete_book" action="/books/{{ book.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
 
             </div>
 

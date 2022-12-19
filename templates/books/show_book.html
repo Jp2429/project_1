@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>Book Shop Inventory: {{ book.title }}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <section class="book_section">
+            <div class="books">
+                <b>Title: </b>{{ book.title }}<br>
+                <b>Genre: </b>{{book.genre}}<br>
+                <b>Description: </b>{{book.description}}<br>
+                <b>Stock Count: </b>{{book.stock_quantity}}
+                <b>Buying Cost: </b>£{{book.buying_cost}}<br>
+                <b>Selling Price: </b>£{{book.selling_price}}<br>
+                <b>Markup: </b> <br>
+
+            </div>
+
+    </section>
+{% endblock %}
