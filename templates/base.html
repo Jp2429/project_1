@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-  <title>Library</title>
+  <title>Book Shop Inventory</title>
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/books">Books</a></li>
-        <li><a href="/books/new_book">Add Book</a></li>
-        
-       
-      </ul>
-    </nav>
+    {% block header %}
+
+    {% endblock %}
+    
   </header>
-  <div class="container">
+  <nav>
+    <ul class="book_shop_nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/books">Books</a></li>
+      <!-- <li><a href="/books/new_book">Add Book</a></li> -->
+      
+     
+    </ul>
+  </nav>
+  <main>
     {% block content %}
     {% endblock %}
-  </div>
+  </main>
 </body>
 </html>

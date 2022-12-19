@@ -4,8 +4,8 @@ from models.book import Book
 from models.author import Author
 
 def save(author):
-    sql="INSERT INTO authors (first_name,last_name,age) VALUES (%s,%s,%s) RETURNING *"
-    values=[author.first_name,author.last_name,author.age]
+    sql="INSERT INTO authors (first_name,last_name,age,active) VALUES (%s,%s,%s,%s) RETURNING *"
+    values=[author.first_name,author.last_name,author.age,author.active]
     query_results=run_sql(sql,values)
     id =query_results[0]['id']
     author.id=id
@@ -17,7 +17,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        author = Author(row['first_name'],row['last_name'],row['age'], row['id'])
+        author = Author(row['first_name'],row['last_name'],row['age'],row['active'], row['id'])
         authors.append(author)
     return authors
 
@@ -27,7 +27,7 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)[0]
     if results is not None:
-        author = Author(results['first_name'],results['last_name'],results['age'], results['id'])
+        author = Author(results['first_name'],results['last_name'],results['age'],results['active'], results['id'])
     return author
 
 def delete_all():
@@ -41,6 +41,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(author):
-    sql = "UPDATE authors SET (first_name,last_name,age) = (%s, %s, %s) WHERE id = %s"
-    values=[author.first_name,author.last_name,author.age,author.id]
+    sql = "UPDATE authors SET (first_name,last_name,age,active) = (%s, %s, %s,%s) WHERE id = %s"
+    values=[author.first_name,author.last_name,author.age,author.id,author.active]
     run_sql(sql, values)
