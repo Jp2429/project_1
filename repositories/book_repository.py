@@ -39,3 +39,8 @@ def delete(id):
     sql = "DELETE FROM books WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(book):
+    sql = "UPDATE books SET (title,description,stock_quantity,buying_cost,selling_price,genre) = (%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values= [book.title,book.description,book.stock_quantity,book.buying_cost,book.selling_price,book.genre,book.id]
+    run_sql(sql, values)

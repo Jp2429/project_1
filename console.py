@@ -7,9 +7,12 @@ import repositories.author_repository as author_repository
 import repositories.book_repository as book_repository
 import repositories.author_book_repository as ab_repository
 
+#Deleting all the files within database
 
 book_repository.delete_all()
 author_repository.delete_all()
+
+# Saving data into the database
 
 book_1=Book("Game Of Thrones 1","Story about thrones",14,3,7,"Fantasy")
 book_1_results=book_repository.save(book_1)
@@ -40,8 +43,7 @@ ab_3_results=ab_repository.save(ab_3)
 select_all_books=book_repository.select_all()
 select_all_authors=author_repository.select_all()
 select_all_ab=ab_repository.select_all()
-# for row in select_all_ab:
-#     print(row.__dict__)
+
 
 # Select single method
 
@@ -52,3 +54,8 @@ select_author=author_repository.select(author_2.id)
 # print(select_author.__dict__)
 select_ab=ab_repository.select(ab_2.id)
 print(select_ab.__dict__)
+
+# deleting one item
+
+# book_repository.delete(book_2.id)
+# author_repository.delete(author_2.id)
