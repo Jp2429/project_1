@@ -8,6 +8,9 @@ import repositories.book_repository as book_repository
 import repositories.author_book_repository as ab_repository
 
 
+book_repository.delete_all()
+author_repository.delete_all()
+
 book_1=Book("Game Of Thrones 1","Story about thrones",14,3,7,"Fantasy")
 book_1_results=book_repository.save(book_1)
 

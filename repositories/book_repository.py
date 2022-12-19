@@ -30,3 +30,12 @@ def select(id):
     if results is not None:
         book = Book(results['title'],results['description'],results['stock_quantity'],results['buying_cost'],results['selling_price'],results['genre'] , results['id'])
     return book
+
+def delete_all():
+    sql = "DELETE FROM books"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM books WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
