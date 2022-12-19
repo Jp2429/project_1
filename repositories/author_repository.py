@@ -10,3 +10,13 @@ def save(author):
     id =query_results[0]['id']
     author.id=id
     return author
+
+def select_all():
+    authors = []
+    sql = "SELECT * FROM authors"
+    results = run_sql(sql)
+
+    for row in results:
+        author = Author(row['first_name'],row['last_name'],row['age'], row['id'])
+        authors.append(author)
+    return authors
