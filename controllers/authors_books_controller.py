@@ -27,8 +27,9 @@ def new_task():
 def create_ab():
     author_id = request.form['author_id']
     book_id = request.form['book_id']
+    print (book_id)
     authors = author_repository.select(author_id)
-    books = author_repository.select(book_id)
+    books = book_repository.select(book_id)
     ab = AuthorBook(authors, books)
     ab_repository.save(ab)
     return redirect('/ab')
