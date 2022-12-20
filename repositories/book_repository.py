@@ -60,3 +60,14 @@ def markup(id):
         markup=percentage*100
         rounded=round(markup,2)
     return rounded
+
+def filter_author(input_id):
+    books=[]
+    sql="SELECT books.* FROM books INNER JOIN authorsBooks ON authorsBooks.book_id=books.id WHERE author_id=%s"
+    values=[input_id]
+    results=run_sql(sql,values)
+
+    for row in results:
+        book = Book(row['title'],row['description'],row['stock_quantity'],row['buying_cost'],row['selling_price'],row['genre'] , row['id'])
+        books.append(book)
+    return books

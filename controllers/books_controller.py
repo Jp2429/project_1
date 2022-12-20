@@ -11,13 +11,13 @@ books_blueprint = Blueprint("books", __name__)
 @books_blueprint.route("/books")
 def index():
     books = book_repository.select_all()
-    return render_template("books/index.html", all_books=books)
+    authors=author_repository.select_all()
+    return render_template("books/index.html", all_books=books,all_authors=authors)
 
 @books_blueprint.route("/books/<id>")
 def show_book(id):
     book=book_repository.select(id)
     markup=book_repository.markup(id)
-    #TODO create a markup calculation method
     return render_template("/books/show_book.html",book=book,markup=markup)
 
 # delete
@@ -64,3 +64,13 @@ def update(id):
     book = Book(title,description,stock_quantity,buying_cost,selling_price,genre,id)
     book_repository.update(book)
     return redirect('/books')
+
+@books_blueprint.route("/books/author", methods=['POST'])
+def filter_author():
+    id=request.form['author_id']
+    books=book_repository.filter_author(id)
+    for book in books:
+        print(book.__dict__)
+    return render_template('/books/author.html',all_books=books)
+    
+

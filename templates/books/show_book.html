@@ -15,6 +15,11 @@
                 <b>Buying Cost: </b>£{{book.buying_cost}}<br>
                 <b>Selling Price: </b>£{{book.selling_price}}<br>
                 <b>Markup: </b>{{markup}}% <br>
+                {% if book.stock_quantity<10 and book.stock_quantity>0 %}
+                    <b><p> Warning the book {{book.title}} is low on stock!! </p></b>
+                {% elif book.stock_quantity == 0 %}
+                    <b><p>Warning the book {{book.title}} is out of stock, please refill the stock!!</p></b>
+                {% endif %}
 
             </div>
 

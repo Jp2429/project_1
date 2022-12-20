@@ -7,6 +7,7 @@
 
 {% block content %}
     <section class="ab_section">
+
         {% for row in all_ab %}
             <div class="ab">
                 <b> Author: </b>{{ row.author.first_name }} {{row.author.last_name}}<br>
