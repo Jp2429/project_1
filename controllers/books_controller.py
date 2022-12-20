@@ -16,8 +16,9 @@ def index():
 @books_blueprint.route("/books/<id>")
 def show_book(id):
     book=book_repository.select(id)
+    markup=book_repository.markup(id)
     #TODO create a markup calculation method
-    return render_template("/books/show_book.html",book=book)
+    return render_template("/books/show_book.html",book=book,markup=markup)
 
 # delete
 @books_blueprint.route("/books/<id>/delete", methods=['POST'])

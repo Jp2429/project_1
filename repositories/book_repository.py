@@ -44,3 +44,19 @@ def update(book):
     sql = "UPDATE books SET (title,description,stock_quantity,buying_cost,selling_price,genre) = (%s,%s,%s,%s,%s,%s) WHERE id = %s"
     values= [book.title,book.description,book.stock_quantity,book.buying_cost,book.selling_price,book.genre,book.id]
     run_sql(sql, values)
+
+#Pleased with this
+
+def markup(id):
+    book=None
+    sql="SELECT * FROM books WHERE id=%s"
+    values=[id]
+    results=run_sql(sql,values)[0]
+
+    if results is not None:
+        book=Book(results['title'],results['description'],results['stock_quantity'],results['buying_cost'],results['selling_price'],results['genre'] , results['id'])
+        profit=book.selling_price-book.buying_cost
+        percentage=profit/book.buying_cost
+        markup=percentage*100
+        rounded=round(markup,2)
+    return rounded
