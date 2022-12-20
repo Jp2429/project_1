@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>Book Shop Inventory: All authors</h1>
+{% endblock %}
+
+
+{% block content %}
+    <section class="author_section">
+        {% for author in all_authors %}
+            <div class="authors">
+                <b> Name: </b>{{ author.firstname }} {{author.last_name}}<br>
+                <b> Age: </b>{{author.age}}<br>
+                <b>Active: </b>
+                {% if author.active==True %}
+                    <span>&#9989;</span>
+                {% else %}
+                    <span>&#10060;</span> 
+                {%endif%}<br>
+                <a href="/authors/{{author.id}}">See here to view a single author</a>
+                <form class="delete_author" action="/authors/{{ author.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+                <form class="edit_author" action="/authors/{{author.id}}/edit_author">
+                    <input type="submit" value="Edit">
+                </form>
+
+
+            </div>
+
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>author Shop Inventory: {{ author.firstname }} {{author.last_name}}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <section class="author_section">
+            <div class="authors">
+                <b>Name: </b>{{ author.first_name }} {{author.last_name}}<br>
+                <b>Age: </b>{{author.age}}<br>
+                <b>Active: </b>
+                {% if author.active==True %}
+                    <span>&#9989;</span>
+                {% else %}
+                    <span>&#10060;</span> 
+                {%endif%}<br>
+            </div>
+
+    </section>
+{% endblock %}
