@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>Book Shop Inventory: All Authors Books</h1>
+{% endblock %}
+
+
+{% block content %}
+    <section class="ab_section">
+        {% for row in all_ab %}
+            <div class="ab">
+                <b> Author: </b>{{ row.author.first_name }} {{row.author.last_name}}<br>
+                <b> Book: </b>{{row.book.title}}<br>
+            </div>
+            <br>
+
+        {% endfor %}
+    </section>
+{% endblock %}

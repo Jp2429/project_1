@@ -28,8 +28,7 @@ def destroy(id):
 # new book
 @books_blueprint.route("/books/new_book")
 def new_book():
-    all_authors = author_repository.select_all()
-    return render_template("books/new_book.html", all_authors= all_authors)
+    return render_template("books/new_book.html")
 
 
 # create book

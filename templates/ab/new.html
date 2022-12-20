@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>Book Shop Inventory: Add Authors Books</h1>
+{% endblock %}
+
+{% block content %}
+<section class="ab_form">
+    <form action="/ab" method="post">
+        <label for="author">Select an author:</label>
+            <select name="author_id" id="author">
+            {% for author in authors %}
+                {% if author.active==True%}
+                    <option value="{{ author.id }}">{{ author.first_name }} {{author.last_name}}</option>
+                {% endif %}
+            {% endfor %}
+            </select>
+        <br>
+        <label for="book">Select a book:</label>
+            <select name="book_id" id="book">
+            {% for book in books %}
+            <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+            </select>
+            <br>
+        <input class="btn btn--action" type='submit' value="Add relationship">
+    </form>
+    
+</section>
+{% endblock %}

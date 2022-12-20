@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>Book Shop Inventory: Add Author to Inventory</h1>
+{% endblock %}
+
+{% block content %}
+<section class="add_author">
+    <div class="create_form">
+        <form action="/authors" method="post">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus><br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required autofocus><br>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Age" required autofocus><br>
+                <label for="active">Activate/Deactivate:</label>
+                <input type="checkbox" id="active" name="active" >
+                
+
+
+            <button type="submit">Add author</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

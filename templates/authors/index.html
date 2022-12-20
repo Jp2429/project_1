@@ -9,7 +9,7 @@
     <section class="author_section">
         {% for author in all_authors %}
             <div class="authors">
-                <b> Name: </b>{{ author.firstname }} {{author.last_name}}<br>
+                <b> Name: </b>{{ author.first_name }} {{author.last_name}}<br>
                 <b> Age: </b>{{author.age}}<br>
                 <b>Active: </b>
                 {% if author.active==True %}
