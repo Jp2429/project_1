@@ -293,6 +293,18 @@ nav {
     box-sizing: border-box;
     border-radius: 5px;
   }
+  .add-author{
+    display:grid;
+    grid-template-columns: 75%;
+    justify-content: center;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  #active{
+    width:7%;
+  }
 
   .edit-class{
     display:grid;
@@ -318,7 +330,7 @@ nav {
     border-radius: 5px;
   }
 
-  
+
 
   .book-show{
     display:grid;
