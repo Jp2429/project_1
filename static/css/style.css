@@ -153,6 +153,60 @@ nav {
     border-radius: 5px;
   }
 
+  .ab_section{
+    display:grid;
+    grid-template-columns: 45% 45%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ab{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+    /* align-items: center; */
+    text-align: left;
+  }
+
+  .ab-form-new{
+    display:grid;
+    grid-template-columns: 75%;
+    justify-content: center;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ab-new{
+    width:75%;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+  }
+  .ab-new input,select,button {
+    font-size: 100%;
+    width : 50%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  
+
   .author-section{
     display:grid;
     grid-template-columns: 45% 45%;

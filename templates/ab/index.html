@@ -7,14 +7,15 @@
 
 {% block content %}
     <section class="ab_section">
-
-        {% for row in all_ab %}
+        
+            {% for row in all_ab %}
             <div class="ab">
-                <b> Author: </b>{{ row.author.first_name }} {{row.author.last_name}}<br>
-                <b> Book: </b>{{row.book.title}}<br>
+                    <b> Author: </b>{{ row.author.first_name }} {{row.author.last_name}}<br>
+                    <b> Book: </b>{{row.book.title}}<br>
+                
+                <br>
             </div>
-            <br>
-
-        {% endfor %}
+            {% endfor %}
+        
     </section>
 {% endblock %}

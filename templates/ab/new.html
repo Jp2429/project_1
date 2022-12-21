@@ -5,26 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<section class="ab_form">
-    <form action="/ab" method="post">
-        <label for="author">Select an author:</label>
-            <select name="author_id" id="author">
-            {% for author in authors %}
-                {% if author.active==True%}
-                    <option value="{{ author.id }}">{{ author.first_name }} {{author.last_name}}</option>
-                {% endif %}
-            {% endfor %}
-            </select>
-        <br>
-        <label for="book">Select a book:</label>
-            <select name="book_id" id="book">
-            {% for book in books %}
-            <option value="{{ book.id }}">{{ book.title }}</option>
-            {% endfor %}
-            </select>
+<section class="ab_form_new">
+    <div class="ab-new">
+        <form action="/ab" method="post">
+            <b><label for="author">Select an author:</label><br></b>
+                <select name="author_id" id="author">
+                {% for author in authors %}
+                    {% if author.active==True%}
+                        <option value="{{ author.id }}">{{ author.first_name }} {{author.last_name}}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
             <br>
-        <input class="btn btn--action" type='submit' value="Add relationship">
-    </form>
-    
+            <b><label for="book">Select a book:</label><br></b>
+                <select name="book_id" id="book">
+                {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+                {% endfor %}
+                </select>
+                <br>
+            <input class="btn btn--action" type='submit' value="Add relationship">
+        </form>
+    </div>
 </section>
 {% endblock %}
