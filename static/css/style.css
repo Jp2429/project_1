@@ -148,7 +148,118 @@ nav {
     width : 50%;
     padding: 10px;
     margin: 5px;
+    margin-left:10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .author-section{
+    display:grid;
+    grid-template-columns: 45% 45%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .author-div{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+    /* align-items: center; */
+    text-align: left;
+
+  }
+  .author-div input,select,button{
+    font-size: 100%;
+    width : 40%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: space-evenly;
+  }
+
+  .author-show{
+    display:grid;
+    grid-template-columns: 75%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+  .filter-author{
+    display:grid;
+    grid-template-columns: 45% 45%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter-a{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+    /* align-items: center; */
+    text-align: left;
+    justify-content: center;
+  }
+
+  .filter-a input,select,button{
+    font-size: 100%;
+    width : 20%;
+    padding: 10px;
+    margin: 5px;
     margin-left:30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .filter-genre{
+    display:grid;
+    grid-template-columns: 45% 45%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-g{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+    /* align-items: center; */
+    text-align: left;
+    justify-content: center;
+  }
+
+  .filter-g input,select,button{
+    font-size: 100%;
+    width : 50%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:10px;
     box-sizing: border-box;
     border-radius: 5px;
   }
@@ -183,21 +294,48 @@ nav {
     border-radius: 5px;
   }
 
-  .edit{
+  .edit-class{
     display:grid;
     grid-template-columns: 100%; 
-    width:100%;
     margin-left:30px;
+    padding:10px
+  }
+  .edit-form{
+    width:75%;
+    padding:10px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.115);
     border-radius: 10px;
-    background-color: rgba(190, 190, 190, 0.793);
+    background-color: rgba(190, 190, 190, 0.793); 
   }
-  .edit-form{
-    width:100%;
+  .edit-form input,select,button{
+    font-size: 100%;
+    width : 75%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  
+
+  .book-show{
+    display:grid;
+    grid-template-columns: 100%; 
+    justify-content: center;
+    margin-left:50px;
     padding:10px;
-    /* border-style: solid;
+  
+    
+  }
+
+  .show-form{  
+    width:75%;
+    margin:10px;
+    padding:10px;
+    border-style: solid;
     border-color: rgba(0, 0, 0, 0.115);
     border-radius: 10px;
-    background-color: rgba(190, 190, 190, 0.793);  */
+    background-color: rgba(190, 190, 190, 0.793); 
   }

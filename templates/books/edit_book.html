@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<!-- <section class="edit"> -->
+<section class="edit-class">
     <div class="edit-form">
         <form action="/books/{{ book.id }}/edit_book" method="post">
 
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" value="{{book.title}}" required autofocus>
-            <label for="genre">Genre</label>
+            <b><label for="title">Title:</label><br></b>
+            <input type="text" id="title" name="title" value="{{book.title}}" required autofocus><br>
+            <b><label for="genre">Genre:</label><br></b>
             <select name="genre" id="genre">
                 <option value="Fantasy">Fantasy</option>
                 <option value="Sci-fi">Sci-fi</option>
@@ -20,13 +20,13 @@
                 <option value="Thriller">Thriller</option>
                 <option value="Crime">Crime</option>
             </select> <br>
-            <label for="description">Description</label>
+            <b><label for="description">Description:<label><br></b>
             <input type="text" id="description" name="description" value="{{book.description}}" required autofocus><br>
-            <label for="stock_count">Stock Count</label>
+            <b><label for="stock_count">Stock Count:</label><br></b>
             <input type="number" id="stock_count" name="stock_quantity" value="{{book.stock_quantity}}" required autofocus><br>
-            <label for="buying_cost"> Buying Cost</label>
+            <b><label for="buying_cost"> Buying Cost:</label><br></b>
             <input type="number" id="buying_cost" name="buying_cost" value="{{book.buying_cost}}" required autofocus><br>
-            <label for="selling_price">Selling Price</label>
+            <b><label for="selling_price">Selling Price:</label><br></b>
             <input type="number" id="selling_price" name="selling_price" value="{{book.selling_price}}" required autofocus><br>
             
             
@@ -36,6 +36,6 @@
 
         </form>
     </div>
-<!-- </section> -->
+</section>
 
 {% endblock %}

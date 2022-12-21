@@ -5,29 +5,31 @@
 {% endblock %}
 
 {% block content %}
-<section class="edit">
-    <form action="/authors/{{ author.id }}/edit_author" method="post">
+<section class="edit-class">
+    <div class="edit-form">
+        <form action="/authors/{{ author.id }}/edit_author" method="post">
 
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value={{author.first_name}} required autofocus><br>
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value={{author.last_name}} required autofocus><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" value={{author.age}} required autofocus><br>
-        <label for="active">Activate/Deactivate:</label>
-        <input type="checkbox" id="active" name="active" 
-        {% if author.active== True %}
-            checked=True
+            <b><label for="first_name">First Name:</label><br></b>
+            <input type="text" id="first_name" name="first_name" value={{author.first_name}} required autofocus><br>
+            <b><label for="last_name">Last Name:</label><br></b>
+            <input type="text" id="last_name" name="last_name" value={{author.last_name}} required autofocus><br>
+            <b><label for="age">Age:</label><br></b>
+            <input type="number" id="age" name="age" value={{author.age}} required autofocus><br>
+            <b><label for="active">Activate/Deactivate:</label><br></b>
+            <input type="checkbox" id="active" name="active" style="float:left;"
+            {% if author.active== True %}
+                checked=True
 
-        {% endif %}
-        >
-        
-        
+            {% endif %}
+            >
+            
+            
 
 
-        <button type="submit">Update author</button>
+            <button type="submit">Update author</button>
 
-    </form>
+        </form>
+    </div>
 </section>
 
 {% endblock %}

@@ -6,13 +6,16 @@
 
 
 {% block content %}
-    <section class="book_section">
+    <section class="filter_author">
         {% for book in all_books %}
-            <div class="books">
-                {{book.title }}<br>
+            <div class="filter-a">
+                <b><p>Title:</p></b>
+                {{ book.title }}<br>
+                <b><p>Genre:</p></b>
                 {{book.genre}}<br>
-                {{book.description}}<br>
-                <a href="/books/{{book.id}}">See here for more information</a>
+                <b><p>Description:</p></b>
+                {{book.description}}<br><br>
+                <a href="/books/{{book.id}}">See here for more information</a><br>
                 <form class="delete_book" action="/books/{{ book.id }}/delete" method="POST">
                     <input type="submit" value="Delete">
                 </form>
