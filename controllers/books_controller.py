@@ -69,8 +69,13 @@ def update(id):
 def filter_author():
     id=request.form['author_id']
     books=book_repository.filter_author(id)
-    for book in books:
-        print(book.__dict__)
     return render_template('/books/author.html',all_books=books)
+
+@books_blueprint.route("/books/genre", methods=['POST'])
+def filter_genre():
+    genre=request.form['genre']
+    books=book_repository.filter_genre(genre)
+    return render_template("/books/genre.html",all_books=books)
+
     
 

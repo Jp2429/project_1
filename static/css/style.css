@@ -1,0 +1,203 @@
+header{
+    /* color: white; */
+    background-color: rgba(195, 191, 191, 0.821);
+    text-align: center;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+}
+
+body{
+    font-family:sans-serif;
+    background: url('/static/images/background_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:grid;
+    grid-template-areas:'header'
+    'nav'
+    'main'
+    'footer' ;
+    
+    
+    height:100%;
+    /* margin:15px; */
+    padding:15px;
+    
+}
+
+footer{
+    background-color:  rgba(195, 191, 191, 0.821);
+    padding:25px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    text-align: center;
+}
+
+main{
+    
+    background-color: rgba(216, 212, 212, 0.858);
+    padding:25px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    width:50%;
+    margin-left:22%;
+
+}
+nav {
+    display:flex;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    background-color: rgba(195, 191, 191, 0.821);
+    padding: 0px;
+    margin: 0px;
+    padding-right: 25px;
+    text-decoration: none;
+  }
+  
+  nav ul li {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    margin-left:20px;
+    /* display:flex; */
+    
+  }
+  
+  nav ul {
+    display:flex;
+    padding: 0px;
+    margin: 0px;
+    
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  nav ul li a{
+    color:black;
+    text-decoration: none;
+  }
+  nav ul li a:hover{
+    color:red;
+    text-decoration: none;
+  }
+
+  .filter-left{
+    display:flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding:10px;
+    margin-bottom: 20px;
+    float: left;
+  }
+
+  .filter-right{
+    display:flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding:10px;
+    margin-bottom: 20px;
+    /* float: right; */
+    /* margin-right: 15px;
+    margin-left: 20px; */
+  }
+
+  .filter-left input,select,button{
+    font-size: 100%;
+    width : 100%;
+    padding: 10px;
+    margin: 5px;
+    margin-right:20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  .filter-right input,select,button{
+    font-size: 100%;
+    width : 100%;
+    padding: 10px;
+    margin: 5px;
+    margin-right:20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+
+
+  .book-display{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+    /* align-items: center; */
+    text-align: left;
+  }
+  .book_section{
+    display:grid;
+    grid-template-columns: 45% 45%;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+  }
+
+  .book_section input,button{
+    font-size: 100%;
+    width : 50%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .add_book{
+    /* display: flex;
+    flex-direction: column; */
+    display:grid;
+    grid-template-columns: 75%;
+    justify-content: center;
+    column-gap:10px ;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .create_form{
+    width:100%;
+    padding:10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+  }
+
+  .create_form input, select, button{
+    font-size: 100%;
+    width : 50%;
+    padding: 10px;
+    margin: 5px;
+    margin-left:10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .edit{
+    display:grid;
+    grid-template-columns: 100%; 
+    width:100%;
+    margin-left:30px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);
+  }
+  .edit-form{
+    width:100%;
+    padding:10px;
+    /* border-style: solid;
+    border-color: rgba(0, 0, 0, 0.115);
+    border-radius: 10px;
+    background-color: rgba(190, 190, 190, 0.793);  */
+  }

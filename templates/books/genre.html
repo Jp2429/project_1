@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>Book Shop Inventory: Books by author</h1>
+{% endblock %}
+
+
+{% block content %}
+    <section class="book_section">
+        {% for book in all_books %}
+            <div class="books">
+                {{book.title }}<br>
+                {{book.genre}}<br>
+                {{book.description}}<br>
+                <a href="/books/{{book.id}}">See here for more information</a>
+                <form class="delete_book" action="/books/{{ book.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+                <form class="edit_book" action="/books/{{book.id}}/edit_book">
+                    <input type="submit" value="Edit">
+                </form>
+
+
+            </div>
+
+        {% endfor %}
+    </section>
+{% endblock %}

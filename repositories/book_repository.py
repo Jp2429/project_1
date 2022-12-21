@@ -71,3 +71,14 @@ def filter_author(input_id):
         book = Book(row['title'],row['description'],row['stock_quantity'],row['buying_cost'],row['selling_price'],row['genre'] , row['id'])
         books.append(book)
     return books
+
+def filter_genre(genre):
+    books=[]
+    sql="SELECT * FROM books WHERE genre=%s"
+    values=[genre]
+    results=run_sql(sql,values)
+
+    for row in results:
+        book = Book(row['title'],row['description'],row['stock_quantity'],row['buying_cost'],row['selling_price'],row['genre'] , row['id'])
+        books.append(book)
+    return books  
