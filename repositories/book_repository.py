@@ -47,6 +47,16 @@ def update(book):
 
 #Pleased with this
 
+#Psuedocode for PDA (markup method)
+#
+# Create markup function
+# Create SQL query
+# Executes SQL query
+# If variable is not empty
+# Store results into book instance
+# Calculates markup
+# Return markup
+
 def markup(id):
     book=None
     sql="SELECT * FROM books WHERE id=%s"
